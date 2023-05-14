@@ -4,9 +4,11 @@ INTRODUCTION
 Welcome to the case study developed as part of the Google Data Analytics Capstone activities of the Google Data Analytics Professional Certificate course. This course promoted knowledge and skills development about the analysis processes (ask, prepare, process, analyze, share and act) that were useful in this case study. This study made it possible to put this knowledge into practice to answer key business questions from real scenarios, such as the high-tech manufacturer of health-focused products for women, Bellabeat. To develop this project I chose to use R Studio
 
 About Bellabeat
+
 Here at Bellabeat, women’s health is our passion. Bellabeat is a high-tech company that manufactures health-focused smart products worldwide. Urška Sršen and Sando Mur founded Bellabeat in 2013, with the intent to develop beautifully designed technology that informs and inspires women around the world.
 
 Analysis Objectives
+
 What are some trends in smart device usage?
 
 How could these trends apply to Bellabeat customers?
@@ -14,6 +16,7 @@ How could these trends apply to Bellabeat customers?
 How could these trends help influence Bellabeat marketing strategy?
 
 Business Task
+
 Utilize the Fitbit Fitness Tracker dataset to derive potential growth opportunities and make analysis based recommendations to our marketing operations team.
 
 ASK
@@ -47,6 +50,7 @@ weightlog <- read_csv(file = "E:/Data/Case study/Bellabeat/archive/Fitabase Data
 
 
 DATA CLEAN AND PREPARATION
+
 Now that we have our data loaded in, we will check our population per dataset.
 
 n_distinct(activity$Id)
@@ -313,7 +317,7 @@ More active user burn more calories per step versus lower active users.
 
 RECOMMENDATIONS
 
-Recommendations
+
 In order to encourage reaching the CDC recommendation of 10,000 steps per day, our app should have preset milestones for users every 2000 steps with a notification alerting them of how many more steps they need to reach 10,000.
 
 Our app should have a process of alerting users if they have been sedentary for an extended period of time in one day.
