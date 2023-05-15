@@ -330,3 +330,6 @@ Our app should provide users with the ability to setup a sleep schedule, that ca
 
 We should give our users the ability to setup a plan or schedule to be active and also have preset active schedules users can select from, based on their needs.
 
+# References
+
+Inspiration : Google data analytics capstone project
