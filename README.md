@@ -1,13 +1,13 @@
-# Bellabeat--Google-capstone-project
-INTRODUCTION
+## Bellabeat--Google-capstone-project
+# INTRODUCTION
 
 Welcome to the case study developed as part of the Google Data Analytics Capstone activities of the Google Data Analytics Professional Certificate course. This course promoted knowledge and skills development about the analysis processes (ask, prepare, process, analyze, share and act) that were useful in this case study. This study made it possible to put this knowledge into practice to answer key business questions from real scenarios, such as the high-tech manufacturer of health-focused products for women, Bellabeat. To develop this project I chose to use R Studio
 
-About Bellabeat
+# About Bellabeat
 
 Here at Bellabeat, women’s health is our passion. Bellabeat is a high-tech company that manufactures health-focused smart products worldwide. Urška Sršen and Sando Mur founded Bellabeat in 2013, with the intent to develop beautifully designed technology that informs and inspires women around the world.
 
-Analysis Objectives
+# Analysis Objectives
 
 What are some trends in smart device usage?
 
@@ -15,23 +15,23 @@ How could these trends apply to Bellabeat customers?
 
 How could these trends help influence Bellabeat marketing strategy?
 
-Business Task
+# Business Task
 
 Utilize the Fitbit Fitness Tracker dataset to derive potential growth opportunities and make analysis based recommendations to our marketing operations team.
 
-ASK
+# ASK
 
 A clear statement of the business task
 
 The purpose of the business task is to analyze data from non-Bellabeat smart device users to gain insights that can be applied to Bellabeat smart devices, such as the smart bracelet, "Leaf", or the Bellabeat subscription. In addition, trends applicable to users and influencing marketing strategies are welcome.
 
-PREPARE
+# PREPARE
 
 A description of all data sources used
 
 This dataset is located on Kaggle and is in the public domain - FitBit Fitness Tracker Data (https://www.kaggle.com/datasets/arashnic/fitbit). They are presented in spreadsheets, with the data organized into 18 files and titled by category. The archives include information such as: Id numbers, date, daily activity, heart rate, calories, steps, and Intensities por horas, as well METs (metabolic equivalent of task) by minute, sleep day and information about weight. Data were obtained between April 12 to May 12, 2016. In addition, the survey was developed by Amazon Mechanical Turk, that is, a reputable company that contributes to the integrity of the data but needs to be confirmed.
 
-PROCESS
+# PROCESS
 
 I downloaded data from "FitBit Fitness Tracker Data" to my computer.
 
@@ -40,7 +40,7 @@ The data was all in the form of a .csv file, a total of 18 files. I opened some 
 Environment Setup
 install.packages(“tidyverse”) install.packages(“lubridate”) install.packages(“dplyr”) install.packages(“ggplot2”) install.packages(“tidyr”) install.packages(“viridisLite”) install.packages(“scales”) install.packages(“devtools”) devtools::install_github(“hadley/devtools”) remotes::install_github(“gadenbuie/cleanrmd”)
 
-IMPORTING DATASETS
+# IMPORTING DATASETS
 
 activity <- read_csv(file = "E:/Data/Case study/Bellabeat/archive/Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv")
 hourly_calories <- read_csv(file = "E:/Data/Case study/Bellabeat/archive/Fitabase Data 4.12.16-5.12.16/hourlyCalories_merged.csv")
@@ -49,7 +49,7 @@ sleep <- read_csv(file = "E:/Data/Case study/Bellabeat/archive/Fitabase Data 4.1
 weightlog <- read_csv(file = "E:/Data/Case study/Bellabeat/archive/Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv")
 
 
-DATA CLEAN AND PREPARATION
+# DATA CLEAN AND PREPARATION
 
 Now that we have our data loaded in, we will check our population per dataset.
 
@@ -121,7 +121,7 @@ hourly_calories_intensities %>%
   select(totalintensity, averageintensity, calories) %>% 
   summary()
 
-KEY FINDINGS
+# KEY FINDINGS
 
 1.The population has an average daily step count of 7638. This is low compared to the CDC recommended step count of 10,000.
 
@@ -150,7 +150,7 @@ Organize with Monday as starting weekday.
 
 hourly_calories_intensities_day_time$weekday <- factor(hourly_calories_intensities_day_time$weekday, levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))
 
-DATA VISUALIZATION
+# DATA VISUALIZATION
 
 
 Now that our data is cleaned and prepared, we will begin visualizing our data in order to derive correlations and important findings.
@@ -166,7 +166,7 @@ ggplot(hourly_calories_intensities_day_time, aes(time, weekday))+
 
 ![Daily intensity output](https://github.com/Premnath1405/Bellabeat--Google-capstone-project/assets/128468794/2d90d2d9-3807-4d62-9f4f-b7f85570b01d)
 
-KEY FINDINGS
+# KEY FINDINGS
 
 The data shows us that our population is more active earlier on week days than weekends. We also see that, on average, higher levels of intensity were out later in the day versus early in the day. We see that users are most active on Saturday, between 11:00am - 2:00pm, and Wednesday, between 5:00pm and 6:00pm.
 Searching for Correlations
@@ -217,7 +217,7 @@ Physical activity for campus employees: a university worksite wellness program")
 ![activity level vs daily sleep minutes](https://github.com/Premnath1405/Bellabeat--Google-capstone-project/assets/128468794/646002a8-0e5d-41fa-a013-f682bd780e0c)
 
 
-Key Insights:
+# Key Insights:
 
 We can see that there is no significant correlation between activity level and daily sleep minutes.
 
@@ -239,7 +239,7 @@ ggplot(activity_sleep_grouped, aes(user_steps, totalsteps))+
 ![activity level vs daily steps](https://github.com/Premnath1405/Bellabeat--Google-capstone-project/assets/128468794/c85ff013-9d1c-4d4c-9854-85910e5b99f8)
 
 
-Key Insights
+# Key Insights
 
 1.There is a high correlation between activity level and the max amount of daily steps users take.
 
@@ -265,7 +265,7 @@ ggplot(activity_sleep_grouped, aes(user_steps, average_totalcalories))+
 ![activity level vs total calorie lost](https://github.com/Premnath1405/Bellabeat--Google-capstone-project/assets/128468794/9c776224-ffae-4e41-8056-b1293032d52e)
 
 
-Key Insights:
+# Key Insights:
 
 1. There is a high correlation between activity level and the max amount of daily steps users take.
 
@@ -299,7 +299,7 @@ For the most part, distance traveled progresses similarly as activity level incr
 
 Based on the total calories burned, we can determine that traveling a minimum of 5 miles puts users, on average, at a higher caloric burn rate.
 
-SUMMARY OF KEY FINDINGS
+# SUMMARY OF KEY FINDINGS
 
 
 User’s average daily step count is 7638. This is low compared to the CDC recommended step count of 10,000.
@@ -315,7 +315,7 @@ There is a high correlation between activity level and the max amount of daily s
 More active user burn more calories per step versus lower active users.
 
 
-RECOMMENDATIONS
+# RECOMMENDATIONS
 
 
 In order to encourage reaching the CDC recommendation of 10,000 steps per day, our app should have preset milestones for users every 2000 steps with a notification alerting them of how many more steps they need to reach 10,000.
